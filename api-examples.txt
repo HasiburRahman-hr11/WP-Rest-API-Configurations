@@ -1,0 +1,12 @@
+// To get a specific Page Content using page id
+API URL: http://your-wp-site-url/wp-json/wp/v2/pages/13?_embed&acf  // ?_embed&acf (To Get image and ACF data)
+
+// To GET All Posts
+API URL: http://your-wp-site-url/wp-json/wp/v2/posts?_embed&acf
+
+// To Get Post by Id
+API URL: `http://localhost/rest-api/wp-json/wp/v2/blogs/post-id?_embed&acf` (Here blogs is a custom post type)
+
+// To Get Post by Slug
+API URL: `http://localhost/rest-api/wp-json/wp/v2/blogs?slug=${slug}&_embed&acf`
+
