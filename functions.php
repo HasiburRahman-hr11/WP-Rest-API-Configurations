@@ -25,11 +25,16 @@ function get_blogs()
 	if ($query->have_posts()) {
 		while ($query->have_posts()) {
 			$query->the_post();
-			$testimonial_data = array(
+			$blog_data = array(
+				'id' => get_the_ID(),
+				'slug' => get_post_field('post_name', get_post()),
 				'title' => get_the_title(),
-				'content' => get_the_content()
+				'excerpt' => get_the_excerpt(), // Get post excerpt
+				'content' => get_the_content(),
+				'featured_image' => get_the_post_thumbnail_url(get_the_ID(), 'full'), // Get featured image URL
+				'acf_fields' => get_fields(get_the_ID()), // Get ACF fields
 			);
-			$blogs[] = $testimonial_data;
+			$blogs[] = $blog_data;
 		}
 		wp_reset_postdata();
 	}
